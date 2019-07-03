@@ -1,0 +1,9 @@
+﻿Importações necessarias
+
+1 - npm install --save react-navigation
+2 - npm install --save redux
+3 - npm install --save react-redux
+4 - npm install --save redux-thunk
+5 - npm install --save react-native-gesture-handler
+6 - react-native link react-native-gesture-handler
+7 - react-native run-android / react-native run-ios
