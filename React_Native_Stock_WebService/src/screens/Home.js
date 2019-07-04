@@ -31,7 +31,7 @@ export class Home extends Component {
             <View style={styles.container}>
                 <Text>Home...</Text>
                 <TouchableHighlight onPress={this.logout} style={styles.logOutButton} underlayColor="transparent">
-                    <Text style={styles.logOutButtonText}>LOGIN</Text>
+                    <Text style={styles.logOutButtonText}>LOG OUT</Text>
                 </TouchableHighlight>
             </View>
         );
