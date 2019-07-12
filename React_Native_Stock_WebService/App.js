@@ -10,6 +10,8 @@ import Preload from './src/screens/Preload';
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
+import Products from './src/screens/Products';
+import Config from './src/screens/Config';
 
 console.disableYellowBox = true;
 
@@ -27,6 +29,12 @@ const AppNavigator = createStackNavigator({
   },
   SignUp:{
     screen:SignUp
+  },
+  Products:{
+    screen:Products
+  },
+  Config:{
+    screen:Config
   }
 
 });

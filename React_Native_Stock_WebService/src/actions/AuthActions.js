@@ -65,7 +65,7 @@ export const watchLogin = () => {
     };
 };
 
-// endpoint IP de seu servidor exemplo 192.168.X.XXX
+// endpoint IP de seu servidor exemplo 192.XXX.X.XXX
 export const LoginUser = (email, pass) => {
     return  (dispatch)=>{
         let endpoint = 'http://IP/webservice_stock/user/login';
@@ -100,7 +100,7 @@ export const LoginUser = (email, pass) => {
     };
 };
 
-// endpoint IP de seu servidor exemplo 192.168.X.XXX
+// endpoint IP de seu servidor exemplo 192.XXX.X.XXX
 export const InsertNewUser = (name, email, pass) => {
     return  (dispatch)=>{
         let endpoint = 'http://IP/webservice_stock/user/new_user';

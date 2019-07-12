@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { NavigationActions, StackActions } from 'react-navigation';
 import { connect } from 'react-redux';
 import { watchLogin, LogOut } from '../actions/AuthActions';
 
 export class Home extends Component {
     static navigationOptions = {
-        title:'Home'
+        title:'Home',
+		header:null
     }
 
     constructor(props) {
@@ -15,6 +17,8 @@ export class Home extends Component {
         };
 
         this.logout = this.logout.bind(this);
+        this.pg_products = this.pg_products.bind(this);
+        this.pg_config = this.pg_config.bind(this);
     }
 
     logout() {
@@ -26,38 +30,66 @@ export class Home extends Component {
         this.props.navigation.navigate('Login');
     }
 
+    pg_products() {
+        this.props.navigation.navigate('Products');
+    }
+
+    pg_config() {
+        this.props.navigation.navigate('Config');
+    }
+
     render() {
         return(
             <View style={styles.container}>
-                <Text>Home...</Text>
-                <TouchableHighlight onPress={this.logout} style={styles.logOutButton} underlayColor="transparent">
-                    <Text style={styles.logOutButtonText}>LOG OUT</Text>
-                </TouchableHighlight>
+                <View style={styles.blocks_menu}/>
+                    <TouchableHighlight onPress={this.pg_products} style={styles.blocks_menu_Button} underlayColor="transparent">
+                        <Text style={styles.blocks_menu_Button_ButtonText}>PRODUTOS</Text>
+                    </TouchableHighlight>
+                
+                <View style={styles.blocks_menu}/>
+                    <TouchableHighlight onPress={this.pg_config} style={styles.blocks_menu_Button} underlayColor="transparent">
+                        <Text style={styles.blocks_menu_Button_ButtonText}>PERFIL</Text>
+                    </TouchableHighlight>
+                
+                <View style={styles.blocks_menu}/>
+                    <TouchableHighlight onPress={this.logout} style={styles.blocks_menu_Button} underlayColor="transparent">
+                        <Text style={styles.blocks_menu_Button_ButtonText}>SAIR</Text>
+                    </TouchableHighlight>
+                
             </View>
         );
-    }
+     }
 }
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
+        flex: 1, 
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignContent: 'center', 
         justifyContent:'center',
-        alignItems:'center'
+        marginTop:-120,
+        backgroundColor:'#333333',
     },
-    logOutButton: {
-        width:"90%",
-        height:50,
-        backgroundColor:'transparent',
+    blocks_menu_Button: {
+        width:130,
+        height:130,
+        backgroundColor:'#003366',
         borderRadius:5,
-        borderWidth:2,
-        borderColor:'#758AFF',
         marginTop:20,
+        borderWidth:2,
+        borderColor:'#0059b3',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
     },
-    logOutButtonText:{
-        color:'#758AFF',
-        fontSize:15
+    blocks_menu_Button_ButtonText:{
+        color:'#FFFFFF',
+        fontWeight: 'bold',
+        fontSize: 20,
+    },
+    blocks_menu:{
+        width: 20, 
+        height: 20
     }
 });
 
